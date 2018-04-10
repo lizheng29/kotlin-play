@@ -293,14 +293,13 @@ class Man(home: String, var sex: String) : Person(home), Fly {
 
     // 一个类里面只能声明一个内部关联对象，即关键字 companion 只能使用一次
     companion object {
-        var bastard : String = "snow"
+        var bastard: String = "snow"
     }
 }
 
-class Dog(fly: Fly) : Fly by fly
-
 // =================================接口=========================================
 interface Fly {
+
     var vehicle: String // 熟悉必须是抽象的,由实现类实现
     // Kotlin 接口与 Java 8 类似，使用 interface 关键字定义接口，允许方法有默认实现
     fun takeOff()
@@ -308,7 +307,11 @@ interface Fly {
     fun land() {
         println("lannnnnnnnnnnnding")
     }
+
 }
+
+// =================================委托类=========================================
+class Dog(fly: Fly) : Fly by fly
 
 // =================================枚举=========================================
 enum class Color {
